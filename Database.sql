@@ -4,7 +4,7 @@ CREATE TABLE USERS(uid INTEGER PRIMARY KEY AUTOINCREMENT,
                     email TEXT PRIMARY KEY,
                     password TEXT NOT NULL);
                     
-CREAT TABLE RATINGS(rid INTEGER PRIMARY KEY AUTOINCREMENT,
+CREATE TABLE RATINGS(rid INTEGER PRIMARY KEY AUTOINCREMENT,
                     fid TEXT,
                     uid TEXT,
                     score INTEGER,
