@@ -8,7 +8,7 @@
   	<servlet-name>Test</servlet-name>
   	<display-name>Test</display-name>
   	<description></description>
-  	<servlet-class>Test</servlet-class>
+  	<servlet-class>servlet.Test</servlet-class>
   </servlet>
   <servlet>
   	<servlet-name>Test2</servlet-name>
@@ -16,12 +16,18 @@
   	<description></description>
   	<servlet-class>Test2</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>Register</servlet-name>
+  	<display-name>Register</display-name>
+  	<description></description>
+  	<servlet-class>servlet.Register</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>Test</servlet-name>
   	<url-pattern>/Test</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>Test2</servlet-name>
-  	<url-pattern>/Test2</url-pattern>
+  	<servlet-name>Register</servlet-name>
+  	<url-pattern>/Register</url-pattern>
   </servlet-mapping>
 </web-app>

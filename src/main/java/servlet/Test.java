@@ -1,3 +1,4 @@
+package servlet;
 
 
 import java.io.IOException;
@@ -30,8 +31,6 @@ public class Test extends HttpServlet {
     public Test() throws SQLException {
         super();
         
-        usersDao.dropTable();
-        ratingsDao.dropTable();
        // dao.createTable();
         if(!tableExist("users")) {
         	usersDao.createTable();
@@ -54,13 +53,9 @@ public class Test extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-//		dao.insert();
-//		System.out.println("oui on insert oui");
-//		System.out.println(dao.get());
-//		ObjectMapper mapper = new ObjectMapper();
-//		String json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(dao.getAll());
-//		response.getWriter().println(json);
-		response.getWriter().println("All done");
+		ObjectMapper mapper = new ObjectMapper();
+		String json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(usersDao.getAll());
+		response.getWriter().println(json);
 	}
 
 	/**
