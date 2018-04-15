@@ -6,11 +6,12 @@ public interface RatingsDAO {
 	
 	@SqlUpdate("CREATE TABLE RATINGS(rid INTEGER PRIMARY KEY AUTOINCREMENT," + 
 			"fid TEXT," + 
-			"uid TEXT," + 
+			"email TEXT," + 
 			"score INTEGER," + 
-			"FOREIGN KEY(uid) REFERENCES users(uid));")
+			"FOREIGN KEY(email) REFERENCES users(email));")
 	void createTable();
 	
-	
+	@SqlUpdate("DROP TABLE RATINGS")
+	void dropTable();
 	
 }
