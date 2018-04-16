@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
   <title>Register</title>
@@ -9,7 +11,6 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-
 <div class="container">
   <h1>Register</h1>
   <form class="form-horizontal" action="Register" method="POST">
@@ -40,16 +41,18 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="pwd">Verify Password:</label>
       <div class="col-sm-10">          
-        <input type="password" class="form-control" id="pwd" placeholder="Verify password" name="pwdverify">
+        <input type="password" class="form-control" id="pwdverify" placeholder="Verify password" name="pwdverify">
       </div>
     </div>
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button id="button" type="submit" class="btn btn-default">Submit</button>
       </div>
     </div>
   </form>
 </div>
 
 </body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="js/scriptRegister.js"></script>
 </html>

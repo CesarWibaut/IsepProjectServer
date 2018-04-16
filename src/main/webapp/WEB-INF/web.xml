@@ -11,16 +11,28 @@
   	<servlet-class>servlet.Test</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>Test2</servlet-name>
-  	<display-name>Test2</display-name>
-  	<description></description>
-  	<servlet-class>Test2</servlet-class>
-  </servlet>
-  <servlet>
   	<servlet-name>Register</servlet-name>
   	<display-name>Register</display-name>
   	<description></description>
   	<servlet-class>servlet.Register</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>RegisterVerif</servlet-name>
+  	<display-name>RegisterVerif</display-name>
+  	<description></description>
+  	<servlet-class>servlet.RegisterVerif</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>InitSession</servlet-name>
+  	<display-name>InitSession</display-name>
+  	<description></description>
+  	<servlet-class>servlet.InitSession</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>VerifLogin</servlet-name>
+  	<display-name>VerifLogin</display-name>
+  	<description></description>
+  	<servlet-class>servlet.VerifLogin</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>Test</servlet-name>
@@ -29,5 +41,17 @@
   <servlet-mapping>
   	<servlet-name>Register</servlet-name>
   	<url-pattern>/Register</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RegisterVerif</servlet-name>
+  	<url-pattern>/RegisterVerif</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>InitSession</servlet-name>
+  	<url-pattern>/InitSession</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>VerifLogin</servlet-name>
+  	<url-pattern>/VerifLogin</url-pattern>
   </servlet-mapping>
 </web-app>

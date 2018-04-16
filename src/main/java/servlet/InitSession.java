@@ -1,43 +1,40 @@
 package servlet;
 
-import static api.BDDFactory.getDbi;
-
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.ws.rs.NotFoundException;
-
-import dao.UsersDAO;
+import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class Register
+ * Servlet implementation class InitSession
  */
-public class Register extends HttpServlet {
+public class InitSession extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-	private static UsersDAO usersDao = getDbi().open(UsersDAO.class);
-	
+       
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Register() {
+    public InitSession() {
         super();
         // TODO Auto-generated constructor stub
     }
 
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String first = request.getParameter("first");
-		String last = request.getParameter("last");
-		String email = request.getParameter("email");
-		String password = request.getParameter("pwd");
-		usersDao.insert(first, last, email, password.hashCode()+"");
-		response.sendRedirect("Test");
+		HttpSession session = request.getSession();
+		session.setAttribute("firstname", request.getParameter("firstname"));
 	}
 
 }
