@@ -41,8 +41,9 @@ public interface UsersDAO {
 
 	
 	@SqlQuery("Select * from users where email = :email and password = :password ")
+	@RegisterMapperFactory(BeanMapperFactory.class)
 	User login(@Bind("email") String email, @Bind("password") String password);
 	
 	@SqlQuery("Select firstName from users where email = :email")
-	User getFirstName(@Bind("email") String email);
+	String getFirstName(@Bind("email") String email);
 }

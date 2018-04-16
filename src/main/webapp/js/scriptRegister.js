@@ -59,7 +59,7 @@ function register() {
                     "firstname": $("#firstName").val()
                 },
                 success: function (response) {
-                    window.location.replace("Test");
+                    window.location.replace("Menu");
                 }
             });
         }

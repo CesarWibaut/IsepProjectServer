@@ -34,6 +34,12 @@
   	<description></description>
   	<servlet-class>servlet.VerifLogin</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>Menu</servlet-name>
+  	<display-name>Menu</display-name>
+  	<description></description>
+  	<servlet-class>servlet.Menu</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>Test</servlet-name>
   	<url-pattern>/Test</url-pattern>
@@ -53,5 +59,9 @@
   <servlet-mapping>
   	<servlet-name>VerifLogin</servlet-name>
   	<url-pattern>/VerifLogin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Menu</servlet-name>
+  	<url-pattern>/Menu</url-pattern>
   </servlet-mapping>
 </web-app>

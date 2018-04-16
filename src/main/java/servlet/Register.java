@@ -27,17 +27,13 @@ public class Register extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("Je créé un compte");
 		String first = request.getParameter("first");
 		String last = request.getParameter("last");
 		String email = request.getParameter("email");
 		String password = request.getParameter("pwd");
 		usersDao.insert(first, last, email, password.hashCode()+"");
-		response.sendRedirect("Test");
 	}
 
 }
