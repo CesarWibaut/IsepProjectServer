@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Welcome</title>
 </head>
-<body>
+<body class="menu">
     <%
         if(session.getAttribute("firstname")==null){
             response.sendRedirect("index.jsp");
