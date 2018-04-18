@@ -7,7 +7,12 @@
     <title>Welcome</title>
 </head>
 <body>
-    <h1>Welcome to this movie rating application</h1>
+    <%
+        if(session.getAttribute("firstname")!=null){
+            response.sendRedirect("menu.jsp");
+        }
+    %>
+    <h1>Welcome to this movie rating website</h1>
     <h2><a href="register.jsp">Register</a></h2>
     <h2>or</h2>
     <h2>Login : </h2>

@@ -26,6 +26,11 @@ public class Register extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
+    
+   @Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		resp.getWriter().println("COUCOU");
+	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Je créé un compte");
@@ -35,5 +40,4 @@ public class Register extends HttpServlet {
 		String password = request.getParameter("pwd");
 		usersDao.insert(first, last, email, password.hashCode()+"");
 	}
-
 }

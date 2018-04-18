@@ -20,7 +20,7 @@ function login(){
         type: "GET",
         url: "VerifLogin?email="+$("#email").val()+"&password="+$("#password").val(),
         success: function (response) {
-            window.location.replace("Menu");
+            window.location.replace("menu.jsp");
         },
         error: function(){
             alert("Wrong email or password");
