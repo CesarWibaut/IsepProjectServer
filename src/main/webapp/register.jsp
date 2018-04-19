@@ -11,6 +11,11 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+<%
+   if(session.getAttribute("firstname")!=null){
+      response.sendRedirect("menu.jsp");
+    }
+%>
 <div class="container">
   <h1>Register</h1>
   <form class="form-horizontal" action="Register" method="POST">
