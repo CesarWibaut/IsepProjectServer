@@ -113,7 +113,6 @@
                 <li><a href="Disconnect">Disconnect</a></li> 
             </ul>
             </li>
-            <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
         </ul>
         </div>
     </div>
