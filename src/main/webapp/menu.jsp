@@ -119,10 +119,11 @@
     </nav>
     <div class="container">
         <h1> Search a movie, series..</h1>
-        <form class="example" action="/action_page.php">
-            <input type="text" placeholder="Search.." name="search">
-            <button type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+        <form class="example">
+            <input type="text" placeholder="Search.." name="search" id="searchBar">
+            <button type="submit" id="searchButton"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
         </form>
     </div>
+    <script src="js/scriptMenu.js"></script>
 </body>
 </html>
