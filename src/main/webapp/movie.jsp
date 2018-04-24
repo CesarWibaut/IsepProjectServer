@@ -46,6 +46,22 @@
         * {
             box-sizing: border-box;
         }
+        .jumbotron{
+            margin-top:2%;
+            background : gray;
+            background-size:     cover;                      /* <------ */
+            background-repeat:   no-repeat;
+            background-position: center center; 
+            height: 1000px; 
+            color:white;
+        }
+        .jumbotron p{
+            font-size : 20px;
+        }
+        .jumbotron img{
+            margin: 4%;
+        }
+
     </style>
     <title>Menu</title>
 </head>
@@ -63,7 +79,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span> 
         </button>
-        <a class="navbar-brand" href="#"><%= session.getAttribute("firstname") %></a>
+        <a class="navbar-brand" href="menu.jsp"><%= session.getAttribute("firstname") %></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
@@ -84,6 +100,9 @@
     </nav>
     <div class="jumbotron text-center">
         <h1></h1>
+        <img src=""></img>
+        <p></p>
     </div>
+    <script src="js/scriptMovie.js"></script>
 </body>
 </html>
