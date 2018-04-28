@@ -103,6 +103,26 @@
         <img src=""></img>
         <p></p>
     </div>
+
+    <div class="text-center">
+        <h1> Rate that movie : </h1>
+        <form class="form-inline">
+            <select>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+            </select>
+            <p>/10</p>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
     <script src="js/scriptMovie.js"></script>
 </body>
 </html>

@@ -11,9 +11,9 @@ $.ajax({
     dataType: "json",
     success: function (response) {
         $("head Title").text(response.title);
-        $("body h1").text(response.title);
-        $("body p").text(response.tagline);
-        $("body img").attr("src", BASE_POSTER + response.poster_path );
+        $(".jumbotron h1").text(response.title);
+        $(".jumbotron p").text(response.tagline);
+        $(".jumbotron img").attr("src", BASE_POSTER + response.poster_path );
         $(".jumbotron").css("background-image", "url("+BASE_BACKDROP + response.backdrop_path+")");
     }
 });
