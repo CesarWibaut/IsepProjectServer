@@ -1,6 +1,12 @@
 package dao;
 
+import java.util.List;
+
 import org.skife.jdbi.v2.sqlobject.*;
+import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapperFactory;
+import org.skife.jdbi.v2.tweak.BeanMapperFactory;
+
+import pojo.Rating;
 
 public interface RatingsDAO {
 	
@@ -15,6 +21,11 @@ public interface RatingsDAO {
 	void dropTable();
 	
 	
-	@SqlUpdate("INSERT INTO RATINGS VALUES ( :fid , :email , :score )")
+	@SqlUpdate("INSERT INTO RATINGS (fid, email, score) VALUES ( :fid , :email , :score )")
 	void insertRatings(@Bind("email") String email, @Bind("fid") String fid, @Bind("score") String score);
+	
+	
+	@SqlQuery("Select * from ratings")
+	@RegisterMapperFactory(BeanMapperFactory.class)
+	List<Rating> getAll();
 }

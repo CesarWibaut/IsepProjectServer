@@ -31,6 +31,7 @@ public class VerifLogin extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		if(usersDao.login(request.getParameter("email"), request.getParameter("password").hashCode()+"") != null){
 			request.getSession().setAttribute("firstname", usersDao.getFirstName(request.getParameter("email")) );
+			request.getSession().setAttribute("email", request.getParameter("email"));
 			response.setStatus(HttpServletResponse.SC_OK);
 		}else {
 			response.setStatus(HttpServletResponse.SC_NOT_FOUND);

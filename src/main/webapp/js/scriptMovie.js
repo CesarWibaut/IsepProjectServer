@@ -15,5 +15,6 @@ $.ajax({
         $(".jumbotron p").text(response.tagline);
         $(".jumbotron img").attr("src", BASE_POSTER + response.poster_path );
         $(".jumbotron").css("background-image", "url("+BASE_BACKDROP + response.backdrop_path+")");
+        $("#fid").attr("value", id);
     }
 });
