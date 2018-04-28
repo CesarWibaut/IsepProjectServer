@@ -5,18 +5,17 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class InitSession
+ * Servlet implementation class Ratings
  */
-public class InitSession extends HttpServlet {
+public class Ratings extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public InitSession() {
+    public Ratings() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,9 +32,8 @@ public class InitSession extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession();
-		session.setAttribute("firstname", request.getParameter("firstname"));
-		session.setAttribute("email", request.getParameter("email"));
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }

@@ -14,4 +14,7 @@ public interface RatingsDAO {
 	@SqlUpdate("DROP TABLE RATINGS")
 	void dropTable();
 	
+	
+	@SqlUpdate("INSERT INTO RATINGS VALUES ( :fid , :email , :score )")
+	void insertRatings(@Bind("email") String email, @Bind("fid") String fid, @Bind("score") String score);
 }
