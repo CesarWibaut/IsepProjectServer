@@ -33,10 +33,14 @@ public interface RatingsDAO {
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	String getAvgScore(@Bind("id") String id);
 	
-	@SqlQuery("Select * from ratings where email = :email AND fid = fid")
+	@SqlQuery("Select * from ratings where email = :email AND fid = :fid")
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	Rating getExistingRating(@Bind("email") String email, @Bind("fid") String fid);
 
 	@SqlUpdate("UPDATE ratings set score = :score where email = :email and fid = :fid")
 	void updateRating(@Bind("email") String email, @Bind("fid") String fid, @Bind("score") String score);
+	
+	@SqlQuery("Select * from Ratings where email = :email ")
+	@RegisterMapperFactory(BeanMapperFactory.class)
+	List<Rating> getMyRatings(@Bind("email") String email);
 }

@@ -56,7 +56,8 @@ function register() {
                 type: "POST",
                 url: "InitSession",
                 data: {
-                    "firstname": $("#firstName").val()
+                    "firstname": $("#firstName").val(),
+                    "email": $("#email").val()
                 },
                 success: function (response) {
                     window.location.replace("menu.jsp");

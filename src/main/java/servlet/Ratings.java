@@ -36,7 +36,8 @@ public class Ratings extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		ObjectMapper mapper = new ObjectMapper();
-		String json = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(ratingsDao.getAll());
+		String json = mapper.writerWithDefaultPrettyPrinter()
+				.writeValueAsString(ratingsDao.getMyRatings((String) request.getSession().getAttribute("email")));
 		response.getWriter().println(json);
 	}
 
@@ -47,13 +48,18 @@ public class Ratings extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
+		
+		System.out.println("POST");
 		if (ratingsDao.getExistingRating((String) session.getAttribute("email"), request.getParameter("fid")) == null) {
+			System.out.println("INSERT");
 			ratingsDao.insertRatings((String) session.getAttribute("email"), request.getParameter("fid"),
 					request.getParameter("score"));
 		} else {
+			System.out.println("UPDATE");
 			ratingsDao.updateRating((String) session.getAttribute("email"), request.getParameter("fid"),
 					request.getParameter("score"));
 		}
+		
 		response.sendRedirect("movie.jsp?id=" + request.getParameter("fid"));
 	}
 
