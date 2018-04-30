@@ -32,6 +32,7 @@ public class Test extends HttpServlet {
         super();
         
        // dao.createTable();
+        //ratingsDao.dropTable();
         if(!tableExist("users")) {
         	usersDao.createTable();
         	System.out.println("creating table users ");

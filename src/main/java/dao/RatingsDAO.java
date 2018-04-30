@@ -28,4 +28,15 @@ public interface RatingsDAO {
 	@SqlQuery("Select * from ratings")
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	List<Rating> getAll();
+	
+	@SqlQuery("Select AVG(score) from ratings where fid = :id ")
+	@RegisterMapperFactory(BeanMapperFactory.class)
+	String getAvgScore(@Bind("id") String id);
+	
+	@SqlQuery("Select * from ratings where email = :email AND fid = fid")
+	@RegisterMapperFactory(BeanMapperFactory.class)
+	Rating getExistingRating(@Bind("email") String email, @Bind("fid") String fid);
+
+	@SqlUpdate("UPDATE ratings set score = :score where email = :email and fid = :fid")
+	void updateRating(@Bind("email") String email, @Bind("fid") String fid, @Bind("score") String score);
 }

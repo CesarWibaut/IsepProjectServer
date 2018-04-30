@@ -39,5 +39,6 @@ public class Register extends HttpServlet {
 		String email = request.getParameter("email");
 		String password = request.getParameter("pwd");
 		usersDao.insert(first, last, email, password.hashCode()+"");
+		request.getSession().setAttribute("email", request.getParameter("email"));
 	}
 }

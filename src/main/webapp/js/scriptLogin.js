@@ -1,9 +1,9 @@
 $("#login").click(function (event){
     event.preventDefault();
-    step1();
+    verif();
 });
 
-function step1(){
+function verif(){
     let inputs = $("input");
     console.log(inputs);
     for(let i = 0; i < inputs.length; i++){

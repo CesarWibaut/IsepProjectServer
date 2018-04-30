@@ -58,6 +58,12 @@
   	<description></description>
   	<servlet-class>servlet.Ratings</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>GlobalRating</servlet-name>
+  	<display-name>GlobalRating</display-name>
+  	<description></description>
+  	<servlet-class>servlet.GlobalRating</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>Test</servlet-name>
   	<url-pattern>/Test</url-pattern>
@@ -93,5 +99,9 @@
   <servlet-mapping>
   	<servlet-name>Ratings</servlet-name>
   	<url-pattern>/Ratings</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>GlobalRating</servlet-name>
+  	<url-pattern>/GlobalRating</url-pattern>
   </servlet-mapping>
 </web-app>

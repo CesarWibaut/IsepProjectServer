@@ -22,27 +22,9 @@
     </style>
 </head>
 
-<%-- <body>
 
 
-    <%
-        if(session.getAttribute("firstname")!=null){
-            response.sendRedirect("menu.jsp");
-        }
-    %>
-    <h1>Welcome to this movie rating website</h1>
-    <h2><a href="register.jsp">Register</a></h2>
-    <h2>or</h2>
-    <h2>Login : </h2>
-    <form action="VerifLogin" method="GET">
-        <input id="email" type="email" name="email" value="">
-        <input id="password" type="password" name="pwd" value="">
-        <input id="login" type="submit" value="Log In">
-    </form>
-</body> --%>
-
-
-    <body class="text-center">
+<body class="text-center">
     <form class="form-signin">
       <%-- <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> --%>
       <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
