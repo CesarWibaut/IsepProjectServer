@@ -48,15 +48,18 @@ public class Ratings extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		
+		String email = request.getParameter("email");
+		if(email==null) {
+			email = (String) session.getAttribute("email");
+		}
 		System.out.println("POST");
-		if (ratingsDao.getExistingRating((String) session.getAttribute("email"), request.getParameter("fid")) == null) {
+		if (ratingsDao.getExistingRating(email, request.getParameter("fid")) == null) {
 			System.out.println("INSERT");
-			ratingsDao.insertRatings((String) session.getAttribute("email"), request.getParameter("fid"),
+			ratingsDao.insertRatings(email, request.getParameter("fid"),
 					request.getParameter("score"));
 		} else {
 			System.out.println("UPDATE");
-			ratingsDao.updateRating((String) session.getAttribute("email"), request.getParameter("fid"),
+			ratingsDao.updateRating(email, request.getParameter("fid"),
 					request.getParameter("score"));
 		}
 		
