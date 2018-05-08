@@ -15,7 +15,7 @@ $("#searchButton").click(function (e) {
     $("#movies").html("");
     $("#darker").show();
     
-    if($("#type").attr("type") == "movie"){
+    if($("#type").val() == "movie"){
         searchMovie();
     }else{
         searchActor();
@@ -30,8 +30,9 @@ function searchActor(){
         success: function (response) {
         	console.log(response);
             for(let i = 0 ; i < response.results.length; i++){
-                for(let j = 0; i < response.results[i].known_for.length; j++){
-                    drawActor(response.results[i].known_for[j]);
+                for(let j = 0; j < response.results[i].known_for.length; j++){
+                    console.log(response.results[i].known_for);
+                    drawMovie(response.results[i].known_for[j]);
                 }
             }
         }
@@ -58,6 +59,7 @@ function searchMovie(){
 }
 
 function drawMovie(movie){
+    console.log( movie);
     count ++ ;
     var box = "<div  id=\"movie\">";
     if(movie.backdrop_path == null){

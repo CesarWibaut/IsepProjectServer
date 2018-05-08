@@ -41,7 +41,22 @@ function draw(movie, score){
     output += "<td> <img width=\"75px\" src=\"" + BASE_POSTER + movie.poster_path + "\"> </td>";
     output += "<td> <h1> <a href=\"movie.jsp?id=" + movie.id + "\">" + movie.title + "</a> </h1> </td>";
     output += "<td> <h1>" + score + " <h1> </td>";
+    output += "<td> <h1>" + avg(movie.id) + " <h1> </td>";
     output += "</tr>";
 
     $("#listRatings").append(output);
+}
+
+function avg(id){
+    let score = 0;
+    $.ajax({
+        async:false,
+        type: "GET",
+        url: "GlobalRating?id="+id,
+        dataType: "text",
+        success: function (response) {
+            score=response;
+        }
+    });
+    return score;
 }

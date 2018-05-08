@@ -54,6 +54,7 @@ public class Ratings extends HttpServlet {
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		String email = request.getParameter("email");
+		System.out.println("email");
 		if(email==null) {
 			email = (String) session.getAttribute("email");
 		}

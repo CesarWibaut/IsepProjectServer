@@ -127,6 +127,7 @@
         <th><h2>Poster Image</h2></th>
         <th><h2>Title</h2></th>
         <th><h2>Score (/10)</h2></th>
+        <th><h2> Average score</h2></th>
       </tr>
     </thead>
     <tbody id="listRatings">    
