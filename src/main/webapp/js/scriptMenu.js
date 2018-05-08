@@ -14,6 +14,32 @@ $("#searchButton").click(function (e) {
 
     $("#movies").html("");
     $("#darker").show();
+    
+    if($("#type").attr("type") == "movie"){
+        searchMovie();
+    }else{
+        searchActor();
+    }
+});
+
+function searchActor(){
+    $.ajax({
+        type: "GET",
+        url: "https://api.themoviedb.org/3/search/person?api_key="+API_KEY+"&query="+ researchValue +"&page=1",
+        dataType: "json",
+        success: function (response) {
+        	console.log(response);
+            for(let i = 0 ; i < response.results.length; i++){
+                for(let j = 0; i < response.results[i].known_for.length; j++){
+                    drawActor(response.results[i].known_for[j]);
+                }
+            }
+        }
+    });
+}
+
+
+function searchMovie(){
     $.ajax({
         type: "GET",
         url: "https://api.themoviedb.org/3/search/movie?api_key="+API_KEY+"&query="+ researchValue +"&page=1",
@@ -22,17 +48,16 @@ $("#searchButton").click(function (e) {
         	console.log(response);
             for(let i = 0 ; i < response.results.length; i++){
                 
-                draw(response.results[i]);
+                drawMovie(response.results[i]);
             }
             if(count %3 !=0){
                 $("#movies").append("</div>");
             }
         }
     });
+}
 
-});
-
-function draw(movie){
+function drawMovie(movie){
     count ++ ;
     var box = "<div  id=\"movie\">";
     if(movie.backdrop_path == null){

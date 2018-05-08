@@ -15,12 +15,10 @@ import dao.RatingsDAO;
  */
 public class Recommandations extends HttpServlet { 
     /**
+     * @return 
      * @see HttpServlet#HttpServlet()
      */
-    public GlobalRating() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+    
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)

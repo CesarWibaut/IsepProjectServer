@@ -146,7 +146,12 @@
     </div>
     </nav>
     <div class="container">
-        <h1> Search a movie, series..</h1>
+        <h1> Search
+            <select id="type" name="type">
+                <option value="movie">a movie</option>
+                <option value="actor">an actor</option>
+            </select>
+        </h1>
         <form class="example">
             <input type="text" placeholder="Search.." name="search" id="searchBar">
             <button type="submit" id="searchButton"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
