@@ -59,22 +59,24 @@ function searchMovie(){
 }
 
 function drawMovie(movie){
-    console.log( movie);
-    count ++ ;
-    var box = "<div  id=\"movie\">";
-    if(movie.backdrop_path == null){
-        
-    }else{
-        box +=" <img class=\"card-img-top\" alt=\"Thumbnail [100%x225]\" style=\"display: block;\" src="+BASE_POSTER + movie.poster_path+" data-holder-rendered=\"true\">";
-    }
-    box+="<div class=\"card-body\">";
-    box+="<h3><a href=\"movie.jsp?id="+movie.id+"\">"+movie.title + " ("+movie.release_date+")</a></h3>";
-    box+="<p class=\"card-text\">"+String(movie.overview).substring(0,200)+"...</p>";
-    box+= "<div class=\"d-flex justify-content-between align-items-center\"> </div></div>";
+    if(movie.media_type == null || movie.media_type =="movie"){
+        console.log( movie);
+        count ++ ;
+        var box = "<div  id=\"movie\">";
+        if(movie.backdrop_path == null){
+            
+        }else{
+            box +=" <img class=\"card-img-top\" alt=\"Thumbnail [100%x225]\" style=\"display: block;\" src="+BASE_POSTER + movie.poster_path+" data-holder-rendered=\"true\">";
+        }
+        box+="<div class=\"card-body\">";
+        box+="<h3><a href=\"movie.jsp?id="+movie.id+"\">"+movie.title + " ("+movie.release_date+")</a></h3>";
+        box+="<p class=\"card-text\">"+String(movie.overview).substring(0,200)+"...</p>";
+        box+= "<div class=\"d-flex justify-content-between align-items-center\"> </div></div>";
 
-    $("#movies").append(box);
-    if(count % 3 == 0){
-        $("#movies").append("</div>");
+        $("#movies").append(box);
+        if(count % 3 == 0){
+            $("#movies").append("</div>");
+        }
     }
 
 }
