@@ -40,9 +40,6 @@ public class Recommandations extends HttpServlet {
 				recommandationDao.createTable();
 				recommandationDao.initTable();
 				System.out.println("creating table users ");
-			}else {
-				recommandationDao.dropTable();
-				System.out.println("tabledropped");
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
