@@ -2,6 +2,7 @@ const API_KEY  = "8d4eebc9735f52f03dbf6c13a652b5c7";
 const BASE_POSTER = "http://image.tmdb.org/t/p/w300"
 
 $(document).ready(function () {
+	
     $.ajax({
         type: "GET",
         url: "Recommandations",
@@ -12,6 +13,8 @@ $(document).ready(function () {
             }
         }
     });
+    
+
 });
 
 function toMovie(id){
@@ -38,7 +41,7 @@ function drawMovie(movie){
             box +=" <img class=\"card-img-top\" alt=\"Thumbnail [100%x225]\" style=\"display: block;\" src="+BASE_POSTER + movie.poster_path+" data-holder-rendered=\"true\">";
         }
         box+="<div class=\"card-body\">";
-        box+="<h3><a href=\"movie.jsp?id="+movie.id+"\">"+movie.title + " ("+movie.release_date+")</a></h3>";
+        box+="<h3><a id=\"movielink\" href=\"movie.jsp?id="+movie.id+"&rec=true\">"+movie.title + " ("+movie.release_date+")</a></h3>";
         box+="<p class=\"card-text\">"+String(movie.overview).substring(0,200)+"...</p>";
         box+= "<div class=\"d-flex justify-content-between align-items-center\"> </div></div>";
 
@@ -47,15 +50,4 @@ function drawMovie(movie){
 
 }
 
-$("a").click(function (e) { 
-    alert("ALED");
-    e.preventDefault();
-    $.ajax({
-        type: "POST",
-        url: "Recommandations",
-        success: function (response) {
-            alert("ALED 2");
-        }
-    });
-});
 

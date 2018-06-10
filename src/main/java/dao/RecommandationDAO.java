@@ -21,4 +21,7 @@ public interface RecommandationDAO {
 	
 	@SqlQuery("SELECT SUM(success)/SUM(total) from RECOMSTATS")
 	float getStats();
+	
+	@SqlQuery("UPDATE RECOMSTATS SET success=0, total=0")
+	void reset();
 }

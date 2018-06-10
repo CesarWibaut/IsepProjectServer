@@ -28,7 +28,11 @@ public class Stats extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().println(recommandationDao.getStats());
+		if(request.getParameter("reset")!=null) {
+			recommandationDao.reset();
+		}else {
+			response.getWriter().println(recommandationDao.getStats());
+		}
 	}
 
 }

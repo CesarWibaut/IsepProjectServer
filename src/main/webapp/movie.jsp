@@ -69,6 +69,18 @@
     <%
         if(session.getAttribute("firstname")==null){
             response.sendRedirect("index.jsp");
+        }if(request.getParameter("rec") != null && request.getParameter("rec").equals("true")){
+            %>
+                <script>
+                    $(document).ready(function () {
+                        $.ajax({
+                            type: "POST",
+                            url: "Recommandations"
+                        });
+                    });
+                </script>
+
+            <%
         }
     %>
    <nav class="navbar navbar-default navbar-fixed-top">
