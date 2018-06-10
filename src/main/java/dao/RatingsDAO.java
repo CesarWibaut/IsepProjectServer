@@ -44,7 +44,11 @@ public interface RatingsDAO {
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	List<Rating> getMyRatings(@Bind("email") String email);
 	
-	@SqlQuery("Select * from Rating where email != :email AND fid in (Select fid from Ratings where email = :email)")
+	@SqlQuery("Select * from Ratings where email != :email AND fid in (Select fid from Ratings where email = :email)")
 	@RegisterMapperFactory(BeanMapperFactory.class)
 	List<Rating> getSimilarRatings(@Bind("email") String email);
+	
+	@SqlQuery("Select fid from Ratings where email = :email AND score > 6 AND fid NOT IN (Select fid from Ratings where email = :secemail)")
+	@RegisterMapperFactory(BeanMapperFactory.class)
+	List<String> getRecommandations(@Bind("email") String email, @Bind("secemail") String secemail);
 }
