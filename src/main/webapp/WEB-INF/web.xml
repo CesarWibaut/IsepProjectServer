@@ -76,6 +76,12 @@
   	<description></description>
   	<servlet-class>servlet.Recommandations</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>Stats</servlet-name>
+  	<display-name>Stats</display-name>
+  	<description></description>
+  	<servlet-class>servlet.Stats</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>Test</servlet-name>
   	<url-pattern>/Test</url-pattern>
@@ -123,5 +129,9 @@
   <servlet-mapping>
   	<servlet-name>Recommandations</servlet-name>
   	<url-pattern>/Recommandations</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>Stats</servlet-name>
+  	<url-pattern>/Stats</url-pattern>
   </servlet-mapping>
 </web-app>
