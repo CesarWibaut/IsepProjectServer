@@ -41,7 +41,8 @@ public class Recommandations extends HttpServlet {
 				recommandationDao.initTable();
 				System.out.println("creating table users ");
 			}else {
-				System.out.println("users already created !");
+				recommandationDao.dropTable();
+				System.out.println("tabledropped");
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -63,6 +64,6 @@ public class Recommandations extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		recommandationDao.addSuccess();
-		
+		System.out.println("Adding success");
 	}
 }

@@ -46,3 +46,16 @@ function drawMovie(movie){
     }
 
 }
+
+$("a").click(function (e) { 
+    alert("ALED");
+    e.preventDefault();
+    $.ajax({
+        type: "POST",
+        url: "Recommandations",
+        success: function (response) {
+            alert("ALED 2");
+        }
+    });
+});
+

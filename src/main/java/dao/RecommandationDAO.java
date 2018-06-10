@@ -4,8 +4,11 @@ import org.skife.jdbi.v2.sqlobject.SqlQuery;
 import org.skife.jdbi.v2.sqlobject.SqlUpdate;
 
 public interface RecommandationDAO {
-	@SqlUpdate("CREATE TABLE RECOMSTATS(total INTEGER, success INTEGER);")
+	@SqlUpdate("CREATE TABLE RECOMSTATS(total FLOAT, success FLOAT);")
 	void createTable();
+	
+	@SqlUpdate("DROP TABLE RECOMSTATS")
+	void dropTable();
 	
 	@SqlUpdate("INSERT INTO RECOMSTATS VALUES (0, 0)")
 	void initTable();
