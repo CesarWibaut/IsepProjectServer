@@ -95,7 +95,7 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="#home">OUR RECOMANDATIONS FOR YOU</a></li>
+            <li><a href="recommandations.jsp">OUR RECOMANDATIONS FOR YOU</a></li>
             <li><a href="myratings.jsp">MY RATINGS</a></li>
             <li><a href="#contact">CONTACT</a></li>
             <li class="dropdown">
